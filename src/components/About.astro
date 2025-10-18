@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section class="py-20 sm:py-32 bg-card">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <div class="mb-12">
+      <h2 class="text-4xl sm:text-5xl font-bold text-foreground mb-4">
+        Sobre Dynamic MetalWorks
+      </h2>
+      <div class="h-1 w-20 bg-accent rounded-full"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <Image
+          src="/industrial-metal-workshop-with-machinery.jpg"
+          alt="Taller de metal mecánica"
+          class="rounded-lg w-full object-cover"
+          width={50}
+          height={50}
+        />
+      </div>
+
+      <div class="space-y-6">
+        <p class="text-lg text-muted-foreground leading-relaxed">
+          Somos Dynamic, una organización dedicada al sector metal mecánico con
+          una trayectoria de más de 20 años en el puerto de Ilo, Departamento de
+          Moquegua, Perú.
+        </p>
+
+        <p class="text-lg text-muted-foreground leading-relaxed">
+          Nos especializamos en tornería, soldadura, mecanizado y fabricación de
+          estructuras metálicas. Nuestro compromiso es ofrecer soluciones
+          integrales y de alta calidad, atendiendo a la industria minera,
+          pesquera y al público en general.
+        </p>
+
+        <p class="text-lg text-muted-foreground leading-relaxed">
+          Contamos con un equipo altamente capacitado y tecnología de vanguardia
+          para garantizar resultados confiables y eficientes.
+        </p>
+
+        <div class="pt-4">
+          <a
+            href="#contact"
+            class="inline-flex items-center text-accent font-semibold hover:text-accent/80 transition"
+          >
+            Conoce más →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

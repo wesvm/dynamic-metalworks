@@ -1,0 +1,24 @@
+---
+import { coverage } from "../data";
+---
+
+<section class="py-20 sm:py-32 bg-card">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl sm:text-5xl font-bold text-foreground mb-4">
+        Atendemos en
+      </h2>
+      <div class="h-1 w-20 bg-accent rounded-full mx-auto"></div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      {
+        coverage.map((area) => (
+          <div class="bg-background border border-border rounded-lg p-6 text-center hover:border-accent/50 transition">
+            <p class="text-lg font-semibold text-foreground">{area}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
