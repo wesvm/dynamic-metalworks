@@ -1,36 +1,65 @@
+---
+import { Image } from "astro:assets";
+import logo from "@/assets/logo.jpg";
+const currentYear = new Date().getFullYear();
+---
+
 <footer class="bg-card border-t border-border py-12">
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
     <div class="grid md:grid-cols-4 gap-8 mb-8">
-      <div>
-        <div class="flex items-center gap-2 mb-4">
-          <div class="h-6 w-6 rounded-full bg-accent"></div>
-          <span class="font-bold text-foreground">Dynamic</span>
-        </div>
-        <p class="text-sm text-muted-foreground">
-          Soluciones integrales en metal mecánica desde 2004.
+      <div class="space-y-4">
+        <a
+          href="/"
+          class="flex items-center gap-2"
+          aria-label="Volver al inicio"
+        >
+          <Image
+            src={logo}
+            alt="Logo de Dynamic MetalWorks"
+            width={40}
+            height={40}
+            class="size-8 rounded-md object-cover"
+          />
+          <span class="font-bold text-foreground text-lg">Dynamic</span>
+        </a>
+        <p class="text-sm text-muted-foreground leading-relaxed text-pretty">
+          Soluciones integrales en metal mecánica, soldadura y mantenimiento
+          industrial desde 2004 en Ilo, Perú.
         </p>
       </div>
 
       <div>
-        <h4 class="font-semibold text-foreground mb-4">Servicios</h4>
+        <h3 class="font-semibold text-foreground mb-4">Servicios</h3>
         <ul class="space-y-2 text-sm text-muted-foreground">
           <li>
-            <a href="#services" class="hover:text-foreground transition">
+            <a
+              href="#services"
+              class="hover:text-foreground transition hover:underline underline-offset-4"
+            >
               Soldadura Industrial
             </a>
           </li>
           <li>
-            <a href="#services" class="hover:text-foreground transition">
+            <a
+              href="#services"
+              class="hover:text-foreground transition hover:underline underline-offset-4"
+            >
               Mantenimiento
             </a>
           </li>
           <li>
-            <a href="#services" class="hover:text-foreground transition">
+            <a
+              href="#services"
+              class="hover:text-foreground transition hover:underline underline-offset-4"
+            >
               Rectificación
             </a>
           </li>
           <li>
-            <a href="#services" class="hover:text-foreground transition">
+            <a
+              href="#services"
+              class="hover:text-foreground transition hover:underline underline-offset-4"
+            >
               Fabricación
             </a>
           </li>
@@ -38,20 +67,29 @@
       </div>
 
       <div>
-        <h4 class="font-semibold text-foreground mb-4">Empresa</h4>
+        <h3 class="font-semibold text-foreground mb-4">Empresa</h3>
         <ul class="space-y-2 text-sm text-muted-foreground">
           <li>
-            <a href="#about" class="hover:text-foreground transition">
+            <a
+              href="#about"
+              class="hover:text-foreground transition hover:underline underline-offset-4"
+            >
               Sobre Nosotros
             </a>
           </li>
           <li>
-            <a href="#services" class="hover:text-foreground transition">
+            <a
+              href="#services"
+              class="hover:text-foreground transition hover:underline underline-offset-4"
+            >
               Servicios
             </a>
           </li>
           <li>
-            <a href="#contact" class="hover:text-foreground transition">
+            <a
+              href="#contact"
+              class="hover:text-foreground transition hover:underline underline-offset-4"
+            >
               Contacto
             </a>
           </li>
@@ -59,30 +97,45 @@
       </div>
 
       <div>
-        <h4 class="font-semibold text-foreground mb-4">Contacto</h4>
-        <ul class="space-y-2 text-sm text-muted-foreground">
-          <li>
-            <a href="tel:953619071" class="hover:text-foreground transition">
+        <h3 class="font-semibold text-foreground mb-4">Contacto</h3>
+        <address class="not-italic space-y-2 text-sm text-muted-foreground">
+          <p>
+            <a
+              href="tel:953619071"
+              class="hover:text-foreground transition flex items-center gap-2"
+            >
+              <span class="sr-only">Teléfono:</span>
               953 619 071
             </a>
-          </li>
-          <li>
+          </p>
+          <p>
             <a
               href="mailto:gjuarez@dynamic-ilo.com"
-              class="hover:text-foreground transition"
+              class="hover:text-foreground transition flex items-center gap-2 break-all"
             >
+              <span class="sr-only">Email:</span>
               gjuarez@dynamic-ilo.com
             </a>
-          </li>
-          <li>Ilo, Moquegua, Perú</li>
-        </ul>
+          </p>
+          <p class="mt-2">
+            Urb. Costa Azul Mz. A' - Lt. 6,<br />
+            Ilo, Moquegua, Perú
+          </p>
+        </address>
       </div>
     </div>
 
-    <div class="border-t border-border pt-8">
+    <div
+      class="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+    >
       <p class="text-center text-sm text-muted-foreground">
-        © 2025 Dynamic MetalWorks. Todos los derechos reservados.
+        &copy; {currentYear} Dynamic MetalWorks. Todos los derechos reservados.
       </p>
+
+      <!-- <div class="flex gap-4 text-sm text-muted-foreground">
+        <a href="#" class="hover:text-foreground transition">Privacidad</a>
+        <a href="#" class="hover:text-foreground transition">Términos</a>
+      </div> -->
     </div>
   </div>
 </footer>
