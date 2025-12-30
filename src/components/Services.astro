@@ -1,50 +1,60 @@
 ---
-import { services } from "../data";
+import { Image } from "astro:assets";
+import { services } from "@/data";
+import ArrowRight from "@/components/icons/ArrowRight.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
 ---
 
-<section class="py-20 sm:py-32 bg-background">
-  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-    <div class="mb-16">
-      <h2 class="text-4xl sm:text-5xl font-bold text-foreground mb-4">
-        Nuestros Servicios
-      </h2>
-      <div class="h-1 w-20 bg-accent rounded-full"></div>
-    </div>
+<SectionContainer id="services" title="Nuestros Servicios">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {
+      services.map((service) => (
+        <article class="group relative bg-card border border-border rounded-lg overflow-hidden hover:border-accent/50 transition flex flex-col h-full">
+          <div class="relative w-full h-48 bg-muted overflow-hidden">
+            <Image
+              src={service.image}
+              alt={`Imagen representativa de ${service.title}`}
+              loading="lazy"
+              decoding="async"
+              width={400}
+              height={300}
+              class="size-full object-cover group-hover:scale-105 transition duration-500 ease-out"
+            />
+            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition" />
+          </div>
 
-    <div class="grid md:grid-cols-2 gap-8">
-      {
-        services.map((service) => (
-          <div class="group relative bg-card border border-border rounded-lg overflow-hidden hover:border-accent/50 transition">
-            {/* Image container */}
-            <div class="relative w-full h-48 bg-muted overflow-hidden">
-              <img
-                src={service.image || "/placeholder.svg"}
-                alt={service.title}
-                class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-              />
-            </div>
+          <div class="p-8 relative z-10 flex flex-col flex-grow">
+            <div
+              class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none"
+              aria-hidden="true"
+            />
 
-            {/* Content container */}
-            <div class="p-8 relative z-10">
-              <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition" />
-              <div class="relative z-10">
-                <h3 class="text-2xl font-bold text-foreground mb-3">
-                  {service.title}
-                </h3>
-                <p class="text-muted-foreground mb-6 leading-relaxed">
-                  {service.description}
-                </p>
+            <div class="relative z-10 flex flex-col h-full">
+              <h3 class="text-2xl font-bold text-foreground mb-3">
+                {service.title}
+              </h3>
+
+              <p class="text-muted-foreground mb-6 leading-relaxed flex-grow text-pretty">
+                {service.description}
+              </p>
+
+              <div class="mt-auto">
                 <a
                   href="#contact"
-                  class="inline-flex items-center text-accent font-semibold hover:text-accent/80 transition"
+                  class="inline-flex items-center gap-2 text-accent font-semibold hover:text-accent/80 transition group/link"
+                  aria-label={`Solicitar cotización para ${service.title}`}
                 >
-                  {service.cta} →
+                  {service.cta || "Cotizar"}
+                  <ArrowRight
+                    size={20}
+                    class="transition-transform group-hover/link:translate-x-1"
+                  />
                 </a>
               </div>
             </div>
           </div>
-        ))
-      }
-    </div>
+        </article>
+      ))
+    }
   </div>
-</section>
+</SectionContainer>
