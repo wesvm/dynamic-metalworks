@@ -1,22 +1,21 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
-import Header from "../components/Header.astro";
-import About from "../components/About.astro";
-import Services from "../components/Services.astro";
-import ServicesAreas from "../components/ServicesAreas.astro";
-import Contact from "../components/Contact.astro";
-import Footer from "../components/Footer.astro";
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import About from "@/components/About.astro";
+import Services from "@/components/Services.astro";
+import ServicesAreas from "@/components/ServicesAreas.astro";
+import Contact from "@/components/Contact.astro";
 ---
 
-<Layout>
-  <main class="min-h-screen bg-background">
-    <Header />
+<Layout
+  title="Dynamic MetalWorks - Soluciones en Mantenimiento y Fabricación de Piezas Metálicas"
+  description="Dynamic MetalWorks ofrece servicios especializados en mantenimiento correctivo, rectificación y fabricación de piezas metálicas para la industria. Contáctanos para optimizar tu producción y prolongar la vida útil de tus equipos."
+>
+  <main class="space-y-24">
     <Hero />
     <About />
     <Services />
     <ServicesAreas />
     <Contact />
-    <Footer />
   </main>
 </Layout>
