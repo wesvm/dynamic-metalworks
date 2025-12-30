@@ -1,13 +1,15 @@
 ---
 interface Props {
+  id?: string;
   size?: number;
   class?: string;
 }
-const { size = 24, class: className } = Astro.props;
+const { id, size = 24, class: className } = Astro.props;
 ---
 
 <svg
   xmlns="http://www.w3.org/2000/svg"
+  id={id}
   width={size}
   height={size}
   class={className}
